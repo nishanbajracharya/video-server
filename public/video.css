@@ -106,10 +106,6 @@ video-js.vjs-ended .vjs-big-play-button,.video-js.vjs-paused .vjs-big-play-butto
   background: rgba(255,255,255,0.5);
 }
 
-.video-js, .video-js video, .vjs-poster, .video-js .vjs-tech {
-  border-radius: 8px;
-}
-
 .video-js {
   width: 100%;
   height: 100%;

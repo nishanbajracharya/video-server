@@ -58,11 +58,17 @@ function Card(props) {
         }
 
         .description {
-          flex: 1;
           padding: 16px;
           display: flex;
+          box-sizing: border-box;
           flex-direction: column;
           justify-content: center;
+          width: calc(100% - 96px);
+        }
+
+        .description p {
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
       `}</style>
     </>
