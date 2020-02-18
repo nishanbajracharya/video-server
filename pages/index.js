@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
 
 import Nav from '../components/nav';
+import Card from '../components/card';
 
 import * as videoService from '../services/video';
 
@@ -23,16 +23,26 @@ const Home = () => {
       </Head>
 
       <Nav />
-
-      <ul>
-        {list.map(video => (
-          <li key={video.id}>
-            <Link href={`/video/${video.id}`}>
-              <a>{video.title}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <>
+        <ul>
+          {list.map(video => (
+            <li key={video.id}>
+              <Card id={video.id} title={video.title} url={video.file} />
+            </li>
+          ))}
+        </ul>
+        <style jsx>
+        {
+          `
+            ul {
+              padding: 0;
+              margin: 8px;
+              list-style: none;
+            }
+          `
+        }
+        </style>
+      </>
     </div>
   );
 };

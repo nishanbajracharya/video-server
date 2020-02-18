@@ -9,6 +9,7 @@ export function getList() {
     return files.map((file, id) => ({
       title: file.name,
       id: 'video-' + id,
+      file: file.base,
       url: VIDEO_URL + '/' + file.base,
     }));
   });
