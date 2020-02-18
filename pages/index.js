@@ -31,18 +31,23 @@ const Home = () => {
         <ul className="list-container">
           {list.map(video => (
             <li key={video.id}>
-              <Card id={video.id} title={video.title} url={video.file} color={getColor()} />
+              <Card
+                id={video.id}
+                title={video.title}
+                url={video.file}
+                color={getColor()}
+              />
             </li>
           ))}
         </ul>
         <style jsx>
-        {
-          `
+          {`
             ul {
               padding: 0;
               margin: 8px;
               list-style: none;
             }
+
             .list-container {
               margin-top: 72px;
             }
@@ -68,8 +73,7 @@ const Home = () => {
                 margin-top: 96px;
               }
             }
-          `
-        }
+          `}
         </style>
       </>
     </div>
