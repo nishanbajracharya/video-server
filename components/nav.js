@@ -28,6 +28,11 @@ const Nav = () => (
     </nav>
     <style jsx>
       {`
+        nav {
+          top: 0;
+          width: 100%;
+          position: fixed;
+        }
         nav ul {
           margin: 0;
           padding: 0;
