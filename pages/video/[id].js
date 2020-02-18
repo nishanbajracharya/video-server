@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 import Nav from '../../components/nav';
+import VideoPlayer from '../../components/video';
 import * as videoService from '../../services/video';
 
 const Video = () => {
@@ -17,13 +19,27 @@ const Video = () => {
 
   return (
     <>
+      <Head>
+        <link
+          href="https://vjs.zencdn.net/7.6.6/video-js.css"
+          rel="stylesheet"
+        />
+        <link href="/video.css" rel="stylesheet" />
+      </Head>
       <div>
         <Nav back />
         <div className="video-container">
           {content.url && (
-            <video controls>
-              <source src={content.url} />
-            </video>
+            <VideoPlayer
+              autoplay
+              controls
+              sources={[
+                {
+                  src: content.url,
+                  type: 'video/mp4',
+                },
+              ]}
+            />
           )}
           <div className="description">
             <p className="title">{content.title}</p>
