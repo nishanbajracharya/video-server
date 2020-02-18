@@ -27,7 +27,7 @@ const Video = () => {
           )}
           <div className="description">
             <p className="title">{content.title}</p>
-            <p>{content.url}</p>
+            <p>{content.file}</p>
           </div>
         </div>
       </div>
