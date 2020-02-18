@@ -6,7 +6,11 @@ import Card from '../components/card';
 
 import * as videoService from '../services/video';
 
-videoService.getList();
+function getColor() {
+  const COLORS = ['#49c', '#6DC85E', '#EFB441', '#EE6464'];
+
+  return COLORS[Math.floor(Math.random() * COLORS.length)];
+}
 
 const Home = () => {
   const [list, setList] = useState([]);
@@ -27,7 +31,7 @@ const Home = () => {
         <ul className="list-container">
           {list.map(video => (
             <li key={video.id}>
-              <Card id={video.id} title={video.title} url={video.file} />
+              <Card id={video.id} title={video.title} url={video.file} color={getColor()} />
             </li>
           ))}
         </ul>

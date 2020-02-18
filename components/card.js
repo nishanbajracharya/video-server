@@ -21,12 +21,12 @@ function Card(props) {
           height: 96px;
           margin-bottom: 8px;
           border-radius: 4px;
-          background: #FFFFFF;
+          background: #ffffff;
           box-sizing: border-box;
-          border: 1px solid #E6E6E6;
+          border: 1px solid #e6e6e6;
           box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
         }
-        
+
         .card .content {
           display: flex;
           text-decoration: none;
@@ -38,10 +38,10 @@ function Card(props) {
           height: 94px;
           display: flex;
           font-size: 48px;
-          background: #49c;
           align-items: center;
           justify-content: center;
           text-transform: uppercase;
+          background: ${props.color};
           border-radius: 4px 0px 0px 4px;
         }
 
@@ -59,7 +59,7 @@ function Card(props) {
 
         .description {
           flex: 1;
-          padding: 8px;
+          padding: 16px;
           display: flex;
           flex-direction: column;
           justify-content: center;
