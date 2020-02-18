@@ -19,6 +19,7 @@ function Card(props) {
       <style jsx>{`
         .card {
           height: 96px;
+          transition: .25s;
           margin-bottom: 8px;
           border-radius: 4px;
           background: #ffffff;
@@ -38,6 +39,7 @@ function Card(props) {
           height: 94px;
           display: flex;
           font-size: 48px;
+          transition: .25s;
           align-items: center;
           justify-content: center;
           text-transform: uppercase;
@@ -47,7 +49,6 @@ function Card(props) {
 
         p {
           margin: 0px;
-          color: #000;
         }
 
         .title {
@@ -58,8 +59,10 @@ function Card(props) {
         }
 
         .description {
+          color: #000;
           padding: 16px;
           display: flex;
+          transition: .25s;
           box-sizing: border-box;
           flex-direction: column;
           justify-content: center;
@@ -69,6 +72,19 @@ function Card(props) {
         .description p {
           overflow: hidden;
           text-overflow: ellipsis;
+        }
+
+        :global(.theme-dark) .card {
+          background: #424242;
+          border: 1px solid #424242;
+        }
+
+        :global(.theme-dark) .thumbnail {
+          color: #424242;
+        }
+
+        :global(.theme-dark) .description {
+          color: #d7d7d7;
         }
       `}</style>
     </>

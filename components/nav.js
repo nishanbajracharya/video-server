@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 
 import Logo from '../assets/logo.png';
 
-const Nav = props => (
-  <>
+import { ThemeContext } from '../contexts/theme';
+
+const Nav = props => {
+  const theme = useContext(ThemeContext);
+
+  return <>
     <Head>
       <link
         rel="stylesheet"
@@ -19,7 +23,17 @@ const Nav = props => (
         {`body {
           background: #fafafa;
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-        }`}
+        }
+        
+        body .theme-dark {
+          height: 100%;
+          transition: .25s;
+          min-height: 100vh;
+          position: relative;
+          background: #212121;
+        }
+
+        `}
       </style>
     </Head>
     <nav>
@@ -36,6 +50,7 @@ const Nav = props => (
             <img className="logo" src={Logo} alt="logo" />
           </a>
         </Link>
+        <i className="material-icons theme-toggle" onClick={theme.toggle}>{theme.value === 'dark' ? 'toggle_on' : 'toggle_off'}</i>
       </div>
     </nav>
     <style jsx>
@@ -48,6 +63,7 @@ const Nav = props => (
           height: 64px;
           position: fixed;
           list-style: none;
+          transition: .25s;
           background: #ffffff;
           box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
         }
@@ -59,6 +75,7 @@ const Nav = props => (
         .back-icon {
           left: 8px;
           color: #ee6464;
+          transition: .25s;
           position: absolute;
         }
 
@@ -70,9 +87,27 @@ const Nav = props => (
           justify-content: center;
         }
 
+        .theme-toggle {
+          right: 8px;
+          font-size: 32px;
+          cursor: pointer;
+          position: absolute;
+        }
+
+        :global(.theme-dark) nav {
+          background: #424242;
+        }
+
+        :global(.theme-dark) .theme-toggle {
+          color: #ee6464;
+        }
+
         @media only screen and (min-width: 991px) {
           .back-icon {
             left: 0;
+          }
+          .theme-toggle {
+            right: 0;
           }
           .nav-container {
             margin: 0 auto;
@@ -82,6 +117,6 @@ const Nav = props => (
       `}
     </style>
   </>
-);
+};
 
 export default Nav;

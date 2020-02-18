@@ -50,7 +50,7 @@ const Video = () => {
       <style jsx>
         {`
           .video-container {
-            margin-top: 72px;
+            padding-top: 72px;
           }
 
           .title {
@@ -68,10 +68,14 @@ const Video = () => {
             padding: 8px;
           }
 
+          :global(.theme-dark) .description {
+            color: #d7d7d7;
+          }
+
           @media only screen and (min-width: 991px) {
             .video-container {
               margin: 0 auto;
-              margin-top: 96px;
+              padding-top: 96px;
               max-width: 960px;
             }
 

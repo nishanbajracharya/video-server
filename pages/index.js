@@ -49,7 +49,7 @@ const Home = () => {
             }
 
             .list-container {
-              margin-top: 72px;
+              padding-top: 72px;
             }
 
             @media only screen and (min-width: 991px) {
@@ -62,7 +62,7 @@ const Home = () => {
 
               ul li {
                 margin-bottom: 32px;
-                width: calc(50% - 32px);
+                width: calc(50% - 16px);
               }
 
               ul li:nth-child(2n) {
@@ -70,7 +70,7 @@ const Home = () => {
               }
 
               .list-container {
-                margin-top: 96px;
+                padding-top: 96px;
               }
             }
           `}
